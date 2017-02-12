@@ -29,13 +29,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btn_start2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btn_start2
+            // 
+            this.btn_start2.Location = new System.Drawing.Point(310, 112);
+            this.btn_start2.Name = "btn_start2";
+            this.btn_start2.Size = new System.Drawing.Size(75, 23);
+            this.btn_start2.TabIndex = 0;
+            this.btn_start2.Text = "start";
+            this.btn_start2.UseVisualStyleBackColor = true;
+            this.btn_start2.Click += new System.EventHandler(this.btn_start2_Click);
             // 
             // board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(1380, 647);
+            this.Controls.Add(this.btn_start2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "board";
@@ -47,5 +60,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btn_start2;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace allu
 {
@@ -11,6 +12,7 @@ namespace allu
         private int map_dim_x;
         private int map_dim_y;
         private int map_box_size = 20;
+        private int map_menu_offset = 200;
 
         public void set_map_dim_parameters(int x, int y)
         {
@@ -31,6 +33,11 @@ namespace allu
         public int get_map_box_size()
         {
             return map_box_size;
+        }
+
+        public int get_map_menu_offset()
+        {
+            return map_menu_offset;
         }
     }
 }
