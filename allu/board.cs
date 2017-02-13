@@ -13,6 +13,7 @@ namespace allu
     public partial class board : Form 
     {
 
+        //storing global class locally
         public glb_params glb_settings;
 
         public board()
@@ -25,11 +26,12 @@ namespace allu
 
         private void btn_start2_Click(object sender, EventArgs e)
         {
+            //invoke drawing class
+            draw_elements drawer = new draw_elements(CreateGraphics());
+            drawer.glb_settings = glb_settings;
             var x = CreateGraphics();
-            var c = Color.Black;
-            var pen = new System.Drawing.Pen(c);
-            x.DrawLine(pen, 0, 0, glb_settings.get_map_dim_parameter_x() * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
-            
+            drawer.DrawGrid();
+
         }
     }
 }

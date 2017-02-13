@@ -32,6 +32,7 @@ namespace allu
             glb_settings.set_map_dim_parameters(Convert.ToInt32(txt_global_x.Text), Convert.ToInt32(txt_global_y.Text));
 
             board frm = new board();
+            //pass global variables class to the 2nd form
             frm.glb_settings = glb_settings;
 
             //temp board dimentions in pxls
