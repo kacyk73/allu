@@ -52,9 +52,8 @@
     <Compile Include="board.Designer.cs">
       <DependentUpon>board.cs</DependentUpon>
     </Compile>
-    <Compile Include="draw_elements.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="draw_elements.cs" />
+    <Compile Include="game.cs" />
     <Compile Include="glb_params.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>

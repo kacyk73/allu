@@ -26,11 +26,14 @@ namespace allu
 
         private void btn_start2_Click(object sender, EventArgs e)
         {
+            //the game entry point
+            //invoke the game class
+
             //invoke drawing class
             draw_elements drawer = new draw_elements(CreateGraphics());
             drawer.glb_settings = glb_settings;
             var x = CreateGraphics();
-            drawer.DrawGrid();
+            drawer.Draw_Grid();
 
         }
     }
