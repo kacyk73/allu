@@ -28,7 +28,8 @@ namespace allu
         private void btn_start2_Click(object sender, EventArgs e)
         {
             //the game entry point
-            //invoke the game class
+            //invoke the terrain
+            terrain terra = new terrain();
 
             //invoke drawing class
             draw_elements drawer = new draw_elements(CreateGraphics());

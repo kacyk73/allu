@@ -25,7 +25,7 @@ namespace allu
             graph = f; //copy class reference to the class header
         }
 
-
+        
         public override void Draw_Grid()
         {
             //set color
@@ -40,7 +40,6 @@ namespace allu
             {
                 graph.DrawLine(pen, 0, j * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_x() * glb_settings.get_map_box_size(), j * glb_settings.get_map_box_size());
             }
-
         }
 
         public override void Draw_Border_Initial()
