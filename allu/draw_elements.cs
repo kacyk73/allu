@@ -42,5 +42,16 @@ namespace allu
             }
 
         }
+
+        public override void Draw_Border_Initial()
+        {
+            //set color
+            var c = Color.Red;
+            var pen = new System.Drawing.Pen(c);
+
+            //draw actual line
+            graph.DrawLine(pen, 0, 0, 100, 100);
+            graph.DrawLine(pen, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), 0, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
+        }
     }
 }

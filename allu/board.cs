@@ -21,7 +21,8 @@ namespace allu
 
             InitializeComponent();
 
-            btn_start2.SetBounds(20 + 20, 200, 60, 30);
+            //draw temporary start button
+            btn_start2.SetBounds(1020, 50, 60, 30);
         }
 
         private void btn_start2_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace allu
             drawer.glb_settings = glb_settings;
             var x = CreateGraphics();
             drawer.Draw_Grid();
-
+            drawer.Draw_Border_Initial();
         }
     }
 }

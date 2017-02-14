@@ -47,5 +47,13 @@ namespace allu
 
             
         }
+
+        private void txt_global_x_TextChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txt_global_x.Text) % 2 != 0)
+            {
+                txt_global_x.Text = Convert.ToString(Convert.ToInt32(txt_global_x.Text) + 1);
+            }
+        }
     }
 }
