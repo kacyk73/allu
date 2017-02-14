@@ -28,11 +28,19 @@ namespace allu
 
         public override void Draw_Grid()
         {
-            
+            //set color
             var c = Color.Black;
             var pen = new System.Drawing.Pen(c);
-            graph.DrawLine(pen, 0, 0, glb_settings.get_map_dim_parameter_x() * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
-            
+            //draw actual grid
+            for (int i = 0; i <= glb_settings.get_map_dim_parameter_x(); i++)
+            {
+                graph.DrawLine(pen, i * glb_settings.get_map_box_size(), 0, i * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
+            }
+            for (int j = 0; j <= glb_settings.get_map_dim_parameter_y(); j++)
+            {
+                graph.DrawLine(pen, 0, j * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_x() * glb_settings.get_map_box_size(), j * glb_settings.get_map_box_size());
+            }
+
         }
     }
 }
