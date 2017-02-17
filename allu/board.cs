@@ -31,7 +31,7 @@ namespace allu
             //invoke the terrain
             terrain terra = new terrain();
 
-            //load the terrain from file
+            //load the terrain from files
 
             //invoke drawing class
             draw_elements drawer = new draw_elements(CreateGraphics());
