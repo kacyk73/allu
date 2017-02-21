@@ -30,6 +30,7 @@ namespace allu
             //the game entry point
             //invoke the terrain
             terrain terra = new terrain();
+            terra.glb_settings = glb_settings;
 
             //load the terrain from files
 
