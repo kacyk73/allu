@@ -9,7 +9,7 @@ namespace allu
     public abstract class map
     {
 
-        //the terrain
+        //the terrain array
         int[,] _terrain = new int[50, 40];
 
         public abstract void  Load_Map();
