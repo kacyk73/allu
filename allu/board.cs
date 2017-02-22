@@ -33,6 +33,7 @@ namespace allu
             terra.glb_settings = glb_settings;
 
             //load the terrain from files
+            //the files stored locally
 
             //invoke drawing class
             draw_elements drawer = new draw_elements(CreateGraphics());
