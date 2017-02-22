@@ -17,7 +17,7 @@ namespace allu
         public override void Load_Map()
         {
             //loading the map from the file
-            //the terrain type is stored in 
+            //the terrain type is stored in the enum
             //Terrain_Type
         }
     }
