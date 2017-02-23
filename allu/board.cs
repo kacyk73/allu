@@ -48,6 +48,9 @@ namespace allu
 
             //draw the whole map
             drawer.Draw_Map(terra.GetTerrain());
+
+            //start button disable
+            btn_start2.Enabled = false;
         }
     }
 }

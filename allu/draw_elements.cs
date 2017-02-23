@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace allu
 {
     public class draw_elements : game
-        //the class contains drawing elements
+    //the class contains drawing elements
     {
 
         public Graphics graph; //the reference to the board graphics
@@ -25,7 +25,7 @@ namespace allu
             graph = f; //copy class reference to the class header
         }
 
-        
+
         public override void Draw_Grid()
         {
             //set color
@@ -49,13 +49,25 @@ namespace allu
             var pen = new System.Drawing.Pen(c);
 
             //draw actual line
-            graph.DrawLine(pen, 0, 0, 100, 100);
+            //graph.DrawLine(pen, 0, 0, 100, 100);
             graph.DrawLine(pen, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), 0, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
         }
 
         public override void Draw_Map(int[,] terra)
         {
-            throw new NotImplementedException();
+            //set color
+            var c = Brushes.DarkGreen;
+
+            for (int i = 0; i < terra.GetLength(0); i++)
+            {
+                for (int j = 0; j < terra.GetLength(1); j++)
+                {
+                    if (terra[i, j] == (int)Terrain_Type.grass)
+                    {
+                        graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
+                    }
+                }
+            }
         }
     }
 }
