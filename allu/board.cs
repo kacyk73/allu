@@ -45,6 +45,9 @@ namespace allu
 
             //load the terrain from files
             terra.Load_Map();
+
+            //draw the whole map
+            drawer.Draw_Map(terra.GetTerrain());
         }
     }
 }

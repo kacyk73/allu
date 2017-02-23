@@ -10,5 +10,6 @@ namespace allu
     {
         public abstract void Draw_Grid();
         public abstract void Draw_Border_Initial();
+        public abstract void Draw_Map(int [,] terra);
     }
 }
