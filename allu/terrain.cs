@@ -23,7 +23,7 @@ namespace allu
             int[,] terr;
             //terr = GetTerrain();
 
-            
+
         }
     }
 }
