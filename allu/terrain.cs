@@ -19,7 +19,9 @@ namespace allu
             //loading the map from the file 
             //the terrain type is stored in the enum
             //Terrain_Type
-            //other code will follow
+
+            int[,] terr;
+            //terr = GetTerrain();
 
             
         }
