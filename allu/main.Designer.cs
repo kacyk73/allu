@@ -61,7 +61,7 @@
             this.txt_global_x.Name = "txt_global_x";
             this.txt_global_x.Size = new System.Drawing.Size(100, 20);
             this.txt_global_x.TabIndex = 2;
-            this.txt_global_x.Text = "50";
+            this.txt_global_x.Text = "60";
             this.txt_global_x.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_global_x.TextChanged += new System.EventHandler(this.txt_global_x_TextChanged);
             // 

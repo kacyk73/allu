@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace allu
             InitializeComponent();
 
             //draw temporary start button
-            btn_start2.SetBounds(1020, 50, 60, 30);
+            btn_start2.SetBounds(1220, 50, 60, 30);
         }
 
         private void btn_start2_Click(object sender, EventArgs e)
@@ -32,8 +33,8 @@ namespace allu
             terrain terra = new terrain();
             terra.glb_settings = glb_settings;
 
-            //load the terrain from files
-            //the files stored locally for terrain
+            //string path = Directory.GetCurrentDirectory();
+            //textBox1.Text = path;
 
             //invoke drawing class
             draw_elements drawer = new draw_elements(CreateGraphics());
@@ -41,6 +42,9 @@ namespace allu
             var x = CreateGraphics();
             drawer.Draw_Grid();
             drawer.Draw_Border_Initial();
+
+            //load the terrain from files
+            terra.Load_Map();
         }
     }
 }

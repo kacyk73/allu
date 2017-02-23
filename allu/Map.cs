@@ -10,7 +10,7 @@ namespace allu
     {
 
         //the terrain array
-        int[,] _terrain = new int[50, 40];
+        int[,] _terrain = new int[60, 40];
 
         public int [,] GetTerrain()
         {

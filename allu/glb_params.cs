@@ -9,9 +9,10 @@ namespace allu
 {
     public enum Terrain_Type
     {
-        grass = 0,
-        water = 1,
-        city = 2
+        grass = 1,
+        water = 2,
+        city = 3,
+        road = 4
     }
 
     public class glb_params

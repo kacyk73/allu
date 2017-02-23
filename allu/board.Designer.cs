@@ -54,7 +54,6 @@
             this.Name = "board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "the allu game";
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
