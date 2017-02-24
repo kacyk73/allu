@@ -57,7 +57,7 @@ namespace allu
                 }
                 y++;
             }
-            SetTerrain(terr);
+            map_Terrain = terr;
         }
     }
 }

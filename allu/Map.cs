@@ -10,17 +10,25 @@ namespace allu
     {
 
         //the terrain array
-        int[,] _terrain = new int[60, 40];
+        //private int[,] _terrain = new int[60, 40];
 
-        public int [,] GetTerrain()
+        //public int [,] GetTerrain()
+        //{
+        //    return _terrain;
+        //}
+
+        //public void SetTerrain(int [,] terr)
+        //{
+        //    _terrain = terr;
+        //}
+        private int[,] _map_Terrain;
+
+        public int[,] map_Terrain
         {
-            return _terrain;
+            get { return _map_Terrain; }
+            set { _map_Terrain = value; }
         }
 
-        public void SetTerrain(int [,] terr)
-        {
-            _terrain = terr;
-        }
 
         public abstract void  Load_Map();
     }

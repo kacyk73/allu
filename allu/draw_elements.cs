@@ -55,7 +55,7 @@ namespace allu
 
         public override void Draw_Map(int[,] terra)
         {
-          
+            var c = Brushes.DarkGreen;
             //iterate through the map
             for (int i = 0; i < terra.GetLength(0); i++)
             {
@@ -64,10 +64,11 @@ namespace allu
                     //set color
                     if (terra[i, j] == (int)Terrain_Type.grass)
                     {
-                        var c = Brushes.DarkGreen;
+
+
+                        //draw actual box
+                        graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
                     }
-                    //draw actual box
-                    graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
                 }
             }
         }
