@@ -17,7 +17,7 @@ namespace allu
     /// <summary>
     /// the game global settings
     /// </summary>
-    public class glb_params
+    public class GlobalParameters
     {
         //map dimentions
         private int map_dim_x;

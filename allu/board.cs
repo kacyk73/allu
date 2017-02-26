@@ -13,13 +13,13 @@ namespace allu
 {
 
     //the game main form
-    public partial class board : Form 
+    public partial class Board : Form 
     {
 
         //storing global class locally
-        public glb_params glb_settings;
+        public GlobalParameters glb_settings;
 
-        public board()
+        public Board()
         {
 
             InitializeComponent();
@@ -32,14 +32,14 @@ namespace allu
         {
             //the game entry point
             //invoke the terrain
-            terrain terra = new terrain();
+            Terrain terra = new Terrain();
             terra.glb_settings = glb_settings;
 
             //string path = Directory.GetCurrentDirectory();
             //textBox1.Text = path;
 
             //invoke drawing class
-            draw_elements drawer = new draw_elements(CreateGraphics());
+            DrawElements drawer = new DrawElements(CreateGraphics());
             drawer.glb_settings = glb_settings;
             var x = CreateGraphics();
             drawer.Draw_Grid();

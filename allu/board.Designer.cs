@@ -1,6 +1,6 @@
 ﻿namespace allu
 {
-    partial class board
+    partial class Board
     {
 
         /// <summary>

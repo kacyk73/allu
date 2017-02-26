@@ -9,7 +9,7 @@ namespace allu
     /// <summary>
     /// map class
     /// </summary>
-    public abstract class map
+    public abstract class Map
     {
         //the map array
         private int[,] mapTerrain;

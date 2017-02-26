@@ -13,17 +13,17 @@ namespace allu
     /// <summary>
     /// drawing methods
     /// </summary>
-    public class draw_elements : game
+    public class DrawElements : Game
     //the class contains drawing elements
     {
 
         public Graphics graph; //the reference to the board graphics
 
         //storing global class locally
-        public glb_params glb_settings;
+        public GlobalParameters glb_settings;
 
         //overwritten class constructor
-        public draw_elements(System.Drawing.Graphics f)
+        public DrawElements(System.Drawing.Graphics f)
         {
             graph = f; //copy class reference to the class header
         }

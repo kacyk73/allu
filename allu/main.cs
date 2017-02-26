@@ -14,20 +14,20 @@ namespace allu
     /// <summary>
     /// the game welcome menu form
     /// </summary>
-    public partial class main : Form
+    public partial class Main : Form
     {
         //initialise global settings object
-        public glb_params glb_settings;
+        public GlobalParameters glb_settings;
 
         //public static glb_params glb_settings { get; set; }
 
 
-        public main()
+        public Main()
         {
             
             InitializeComponent();
 
-            glb_settings = new glb_params();
+            glb_settings = new GlobalParameters();
         }
 
         private void btn_start_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace allu
             //initialise global settings object
             glb_settings.set_map_dim_parameters(Convert.ToInt32(txt_global_x.Text), Convert.ToInt32(txt_global_y.Text));
 
-            board frm = new board();
+            Board frm = new Board();
             //pass global variables class to the 2nd form
             frm.glb_settings = glb_settings;
 

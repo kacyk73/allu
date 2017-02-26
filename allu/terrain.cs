@@ -10,13 +10,13 @@ namespace allu
     /// <summary>
     /// the game map terrain
     /// </summary>
-    public class terrain : map
+    public class Terrain : Map
 
     {
 
 
         //storing global class locally
-        public glb_params glb_settings;
+        public GlobalParameters glb_settings;
 
         public override void Load_Map()
         {

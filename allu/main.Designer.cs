@@ -1,6 +1,6 @@
 ﻿namespace allu
 {
-    partial class main
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.

@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace allu.Tests
 {
     [TestClass()]
-    public class terrainTests
+    public class TerrainTests
     {
         [TestMethod()]
         public void Load_MapTest()
         {
             //arrange
-            terrain terra = new terrain();
+            Terrain terra = new Terrain();
 
             //act
             terra.Load_Map();

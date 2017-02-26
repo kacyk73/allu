@@ -9,7 +9,7 @@ namespace allu
     /// <summary>
     /// the game methods
     /// </summary>
-    public abstract class game
+    public abstract class Game
     {
         public abstract void Draw_Grid();
         public abstract void Draw_Border_Initial();
