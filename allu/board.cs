@@ -49,7 +49,7 @@ namespace allu
             terra.Load_Map();
 
             //draw the whole map
-            drawer.Draw_Map(terra.map_Terrain);
+            drawer.Draw_Map(terra.MapTerrain);
 
             //start button disable
             btn_start2.Enabled = false;

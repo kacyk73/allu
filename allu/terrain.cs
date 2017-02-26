@@ -60,7 +60,7 @@ namespace allu
                 }
                 y++;
             }
-            map_Terrain = terr;
+            MapTerrain = terr;
         }
     }
 }
