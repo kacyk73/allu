@@ -6,24 +6,15 @@ using System.Threading.Tasks;
 
 namespace allu
 {
+    /// <summary>
+    /// the map class defines properties for the map itself to be inherited by the terrain class later on
+    /// </summary>
     public abstract class map
     {
-
-        //the terrain array
-        //private int[,] _terrain = new int[60, 40];
-
-        //public int [,] GetTerrain()
-        //{
-        //    return _terrain;
-        //}
-
-        //public void SetTerrain(int [,] terr)
-        //{
-        //    _terrain = terr;
-        //}
+        //the map array
         private int[,] _map_Terrain;
 
-        //map terrain property
+
         public int[,] map_Terrain
         {
             get { return _map_Terrain; }
