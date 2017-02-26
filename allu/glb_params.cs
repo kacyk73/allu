@@ -14,7 +14,9 @@ namespace allu
         city = 3,
         road = 4
     }
-
+    /// <summary>
+    /// the game global settings
+    /// </summary>
     public class glb_params
     {
         //map dimentions

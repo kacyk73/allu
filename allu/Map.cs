@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace allu
 {
     /// <summary>
-    /// the map class defines properties for the map itself to be inherited by the terrain class later on
+    /// defines properties for the map itself to be inherited by the terrain class later on
     /// </summary>
     public abstract class map
     {

@@ -11,6 +11,9 @@ using System.Configuration;
 
 namespace allu
 {
+    /// <summary>
+    /// the game welcome menu form
+    /// </summary>
     public partial class main : Form
     {
         //initialise global settings object

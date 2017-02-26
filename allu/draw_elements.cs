@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace allu
 {
+    /// <summary>
+    /// drawing methods
+    /// </summary>
     public class draw_elements : game
     //the class contains drawing elements
     {

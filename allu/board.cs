@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace allu
 {
+
+    //the game main form
     public partial class board : Form 
     {
 

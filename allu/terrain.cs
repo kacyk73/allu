@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace allu
 {
+    /// <summary>
+    /// the game map terrain
+    /// </summary>
     public class terrain : map
 
     {

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace allu
 {
+    /// <summary>
+    /// the game methods
+    /// </summary>
     public abstract class game
     {
         public abstract void Draw_Grid();
