@@ -7,13 +7,22 @@ using System.Windows.Forms;
 
 namespace allu
 {
-    public enum Terrain_Type
+    //terrain type
+    public enum TerrainKind
     {
         grass = 1,
         water = 2,
         city = 3,
         road = 4
     }
+
+    //friend-foe definition
+    public enum FriendFoeKind
+    {
+        friend = 1,
+        foe = 2
+    }
+
     /// <summary>
     /// the game global settings
     /// </summary>

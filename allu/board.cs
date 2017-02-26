@@ -48,6 +48,9 @@ namespace allu
             //load the terrain from files
             terra.Load_Map();
 
+            //friend-foe initialisation
+            terra.FriendFoeInitialisation();
+
             //draw the whole map
             drawer.Draw_Map(terra.MapTerrain);
 

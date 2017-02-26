@@ -22,8 +22,14 @@ namespace allu
         //storing global class locally
         public GlobalParameters glb_settings;
 
+        //default constructor
+        public DrawElements()
+        {
+
+        }
+
         //overwritten class constructor
-        public DrawElements(System.Drawing.Graphics f)
+        public DrawElements(System.Drawing.Graphics f) : this() // constructor chain
         {
             graph = f; //copy class reference to the class header
         }
@@ -51,8 +57,6 @@ namespace allu
             var c = Color.Red;
             var pen = new System.Drawing.Pen(c);
 
-            //draw actual line
-            //graph.DrawLine(pen, 0, 0, 100, 100);
             graph.DrawLine(pen, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), 0, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
         }
 
@@ -76,16 +80,16 @@ namespace allu
 
             switch (terra[i, j])
             {
-                case (int)Terrain_Type.grass:
+                case (int)TerrainKind.grass:
                     c = Brushes.DarkGreen;
                     break;
-                case (int)Terrain_Type.road:
+                case (int)TerrainKind.road:
                     c = Brushes.DarkSlateGray;
                     break;
-                case (int)Terrain_Type.city:
+                case (int)TerrainKind.city:
                     c = Brushes.DarkOliveGreen;
                     break;
-                case (int)Terrain_Type.water:
+                case (int)TerrainKind.water:
                     c = Brushes.Navy;
                     break;
                 default:

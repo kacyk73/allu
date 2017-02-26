@@ -14,14 +14,23 @@ namespace allu
         //the map array
         private int[,] mapTerrain;
 
-
         public int[,] MapTerrain
         {
             get { return mapTerrain; }
             set { mapTerrain = value; }
         }
 
+        //the friend-foe on the map identification
+        private int[,] friendFoe;
 
-        public abstract void  Load_Map();
+        public int[,] FriendFoe
+        {
+            get { return friendFoe; }
+            set { friendFoe = value; }
+        }
+
+
+        public abstract void Load_Map();
+        public abstract void FriendFoeInitialisation();
     }
 }

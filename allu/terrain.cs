@@ -13,10 +13,23 @@ namespace allu
     public class Terrain : Map
 
     {
-
-
         //storing global class locally
         public GlobalParameters glb_settings;
+
+        public override void FriendFoeInitialisation()
+        {
+            int[,] friend_foe = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
+
+            for (int i = 0; i < glb_settings.get_map_dim_parameter_x(); i++)
+                for (int j = 0; j < glb_settings.get_map_dim_parameter_y(); j++)
+                {
+                    if (i < glb_settings.get_map_dim_parameter_x() / 2)
+                        friend_foe[i, j] = (int)FriendFoeKind.friend;
+                    else
+                        friend_foe[i, j] = (int)FriendFoeKind.foe;
+                }
+            FriendFoe = friend_foe;
+        }
 
         public override void Load_Map()
         {
@@ -26,7 +39,7 @@ namespace allu
 
             string[] lines = System.IO.File.ReadAllLines(@"txt\map.txt");
 
-            int[,] terr = new int [60, 40];
+            int[,] terr = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
 
             //initiating the terr matrix
             int x, y;
@@ -39,19 +52,19 @@ namespace allu
                     switch (s)
                     {
                         case 'v':
-                            terr[x, y] = (int)Terrain_Type.grass;
+                            terr[x, y] = (int)TerrainKind.grass;
                             x++;
                             break;
                         case 'w':
-                            terr[x, y] = (int)Terrain_Type.water;
+                            terr[x, y] = (int)TerrainKind.water;
                             x++;
                             break;
                         case 'r':
-                            terr[x, y] = (int)Terrain_Type.road;
+                            terr[x, y] = (int)TerrainKind.road;
                             x++;
                             break;
                         case 'c':
-                            terr[x, y] = (int)Terrain_Type.city;
+                            terr[x, y] = (int)TerrainKind.city;
                             x++;
                             break;
                         default:
