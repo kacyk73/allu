@@ -55,25 +55,42 @@ namespace allu
 
         public override void Draw_Map(int[,] terra)
         {
-            
+
             //iterate through the map
             for (int i = 0; i < terra.GetLength(0); i++)
             {
                 for (int j = 0; j < terra.GetLength(1); j++)
                 {
-                    //set color
-                    if (terra[i, j] == (int)Terrain_Type.grass)
-                    {
-                        Draw_box_XY(i, j);
-                    }
+                    Draw_box_XY(terra, i, j);
+
                 }
             }
         }
 
-        private void Draw_box_XY(int i, int j)
+        private void Draw_box_XY(int[,] terra, int i, int j)
         {
             Brush c;
-            c = Brushes.DarkGreen;
+
+            switch (terra[i, j])
+            {
+                case (int)Terrain_Type.grass:
+                    c = Brushes.DarkGreen;
+                    break;
+                case (int)Terrain_Type.road:
+                    c = Brushes.DarkSlateGray;
+                    break;
+                case (int)Terrain_Type.city:
+                    c = Brushes.DarkOliveGreen;
+                    break;
+                case (int)Terrain_Type.water:
+                    c = Brushes.Navy;
+                    break;
+                default:
+                    c = Brushes.DarkGreen;
+                    break;
+            }
+
+
 
             //draw actual box
             graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
