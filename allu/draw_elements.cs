@@ -90,8 +90,6 @@ namespace allu
                     break;
             }
 
-
-
             //draw actual box
             graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
         }
