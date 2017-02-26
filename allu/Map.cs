@@ -23,6 +23,7 @@ namespace allu
         //}
         private int[,] _map_Terrain;
 
+        //map terrain property
         public int[,] map_Terrain
         {
             get { return _map_Terrain; }
