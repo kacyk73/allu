@@ -20,11 +20,24 @@ namespace allu
         //storing global class locally
         public GlobalParameters glb_settings;
 
-        ///invoke the terrain
-        Terrain terra;
+        //invoke the terrain
+        private Terrain terra;
+
+        public Terrain Terra
+        {
+            get { return terra; }
+            set { terra = value; }
+        }
 
         //invoke drawing class
-        DrawElements drawer;
+        private DrawElements drawer;
+
+        public DrawElements Drawer
+        {
+            get { return drawer; }
+            set { drawer = value; }
+        }
+
 
         public Board()
         {
@@ -35,29 +48,30 @@ namespace allu
             btn_start2.SetBounds(1220, 50, 60, 30);
 
             //call local objects
-            this.terra = new Terrain();
+            this.Terra = new Terrain();
+
         }
 
         private void btn_start2_Click(object sender, EventArgs e)
         {
             //the game entry point
             //local settings for global variables
-            terra.glb_settings = glb_settings;
+            Terra.glb_settings = glb_settings;
 
             //drawer = new DrawElements(CreateGraphics());
-            drawer.glb_settings = glb_settings;
+            Drawer.glb_settings = glb_settings;
             //var x = CreateGraphics();
-            drawer.Draw_Grid();
-            drawer.Draw_Border_Initial();
+            Drawer.Draw_Grid();
+            Drawer.Draw_Border_Initial();
 
             //load the terrain from files
-            terra.Load_Map();
+            Terra.Load_Map();
 
             //friend-foe initialisation
-            terra.FriendFoeInitialisation();
+            Terra.FriendFoeInitialisation();
 
             //draw the whole map
-            drawer.Draw_Map(terra.MapTerrain);
+            Drawer.Draw_Map(Terra.MapTerrain);
 
             //start button disable
             btn_start2.Enabled = false;
@@ -71,7 +85,7 @@ namespace allu
         private void Board_Load(object sender, EventArgs e)
         {
             //set actual graphics to drawer
-            drawer = new DrawElements(CreateGraphics());
+            Drawer = new DrawElements(CreateGraphics());
         }
     }
 }

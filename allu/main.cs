@@ -19,8 +19,6 @@ namespace allu
         //initialise global settings object
         public GlobalParameters glb_settings;
 
-        //public static glb_params glb_settings { get; set; }
-
 
         public Main()
         {
