@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,9 @@ namespace allu
         //storing global class locally
         public GlobalParameters glb_settings;
 
+        ///invoke the terrain
+        Terrain terra;
+
         public Board()
         {
 
@@ -26,13 +30,14 @@ namespace allu
 
             //draw temporary start button
             btn_start2.SetBounds(1220, 50, 60, 30);
+
+            this.terra = new Terrain();
         }
 
         private void btn_start2_Click(object sender, EventArgs e)
         {
             //the game entry point
-            //invoke the terrain
-            Terrain terra = new Terrain();
+            //local settings for global variables
             terra.glb_settings = glb_settings;
 
             //string path = Directory.GetCurrentDirectory();
@@ -60,7 +65,7 @@ namespace allu
 
         private void Board_DoubleClick(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
