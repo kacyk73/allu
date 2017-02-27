@@ -57,5 +57,10 @@ namespace allu
             //start button disable
             btn_start2.Enabled = false;
         }
+
+        private void Board_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

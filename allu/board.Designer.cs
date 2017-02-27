@@ -42,7 +42,7 @@
             this.btn_start2.UseVisualStyleBackColor = true;
             this.btn_start2.Click += new System.EventHandler(this.btn_start2_Click);
             // 
-            // board
+            // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,9 +51,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "board";
+            this.Name = "Board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "the allu game";
+            this.DoubleClick += new System.EventHandler(this.Board_DoubleClick);
             this.ResumeLayout(false);
 
         }
