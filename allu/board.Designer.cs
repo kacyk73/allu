@@ -54,6 +54,7 @@
             this.Name = "Board";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "the allu game";
+            this.Load += new System.EventHandler(this.Board_Load);
             this.DoubleClick += new System.EventHandler(this.Board_DoubleClick);
             this.ResumeLayout(false);
 

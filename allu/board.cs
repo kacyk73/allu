@@ -23,6 +23,9 @@ namespace allu
         ///invoke the terrain
         Terrain terra;
 
+        //invoke drawing class
+        DrawElements drawer;
+
         public Board()
         {
 
@@ -31,6 +34,7 @@ namespace allu
             //draw temporary start button
             btn_start2.SetBounds(1220, 50, 60, 30);
 
+            //call local objects
             this.terra = new Terrain();
         }
 
@@ -40,13 +44,9 @@ namespace allu
             //local settings for global variables
             terra.glb_settings = glb_settings;
 
-            //string path = Directory.GetCurrentDirectory();
-            //textBox1.Text = path;
-
-            //invoke drawing class
-            DrawElements drawer = new DrawElements(CreateGraphics());
+            //drawer = new DrawElements(CreateGraphics());
             drawer.glb_settings = glb_settings;
-            var x = CreateGraphics();
+            //var x = CreateGraphics();
             drawer.Draw_Grid();
             drawer.Draw_Border_Initial();
 
@@ -66,6 +66,12 @@ namespace allu
         private void Board_DoubleClick(object sender, EventArgs e)
         {
             
+        }
+
+        private void Board_Load(object sender, EventArgs e)
+        {
+            //set actual graphics to drawer
+            drawer = new DrawElements(CreateGraphics());
         }
     }
 }
