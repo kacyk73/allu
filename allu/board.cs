@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace allu
 {
 
-    //the game main form
+    //the game main form class
     public partial class Board : Form 
     {
 
