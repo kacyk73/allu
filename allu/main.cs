@@ -39,7 +39,7 @@ namespace allu
 
             //temp board dimentions in pxls
             int x = glb_settings.get_map_dim_parameter_x() * glb_settings.get_map_box_size() + glb_settings.get_map_menu_offset() + glb_settings.get_map_box_size();
-            int y = glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size() + glb_settings.get_map_box_size();
+            int y = glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size() + 2 * glb_settings.get_map_box_size();
 
 
             //set dynamic board size

@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace allu
 {
+
     //terrain type
     public enum TerrainKind
     {
@@ -35,6 +36,9 @@ namespace allu
         private int map_box_size = 20;
         //menu size
         private int map_menu_offset = 200;
+
+        //out of range parameter
+        public const int OutOfRange = 999;
 
         public void set_map_dim_parameters(int x, int y)
         {

@@ -14,11 +14,23 @@ namespace allu
 {
 
     //the game main form class
-    public partial class Board : Form 
+    public partial class Board : Form
     {
+
+        //the game is on
+        bool GameIsOn = false;
 
         //storing global class locally
         public GlobalParameters glb_settings;
+
+        //invoke map position class
+        private Map.PosXY currentPositionXY;
+
+        public Map.PosXY CurrentPositionXY
+        {
+            get { return currentPositionXY; }
+            set { currentPositionXY = value; }
+        }
 
         //invoke the terrain
         private Terrain terra;
@@ -55,6 +67,8 @@ namespace allu
         private void btn_start2_Click(object sender, EventArgs e)
         {
             //the game entry point
+            GameIsOn = true;
+
             //local settings for global variables
             Terra.glb_settings = glb_settings;
 
@@ -79,7 +93,7 @@ namespace allu
 
         private void Board_DoubleClick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Board_Load(object sender, EventArgs e)
@@ -90,14 +104,38 @@ namespace allu
 
         private void Board_MouseHover(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Board_MouseMove(object sender, MouseEventArgs e)
         {
-            textBox1.Text = Convert.ToString(Convert.ToInt32(textBox1.Text) + 1);
+            if (GameIsOn)
+            {
 
-            //object[] ddd = new object[4];
+                //get current mouse position in map grid values
+                var TempPositionXY = new Map.PosXY();
+                TempPositionXY = terra.GetPoxitionXY(e.X, e.Y);
+                if (CurrentPositionXY != TempPositionXY)
+                    if ((TempPositionXY.PosX != GlobalParameters.OutOfRange) && (TempPositionXY.PosY != GlobalParameters.OutOfRange))
+                    {
+                        CurrentPositionXY = TempPositionXY;
+                        textBox1.Text = Convert.ToString(Convert.ToInt32(CurrentPositionXY.PosX));
+                        labely.Text = Convert.ToString(Convert.ToInt32(CurrentPositionXY.PosY));
+
+                        //friend foe label
+                        lblFriendFoe.Text = terra.GetLabelsFriendFoe(terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
+                    }
+                    else
+                    {
+                        //temporary debugging
+                        textBox1.Text = Convert.ToString(999);
+
+                        //friend foe label
+                        lblFriendFoe.Text = "";
+                    }
+                    
+            }
+
         }
     }
 }

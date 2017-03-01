@@ -31,6 +31,38 @@ namespace allu
             FriendFoe = friend_foe;
         }
 
+        public override string GetLabelsFriendFoe(int i)
+        {
+            string label = "";
+
+            switch (i)
+            {
+                case (int)FriendFoeKind.friend:
+                    label = "friend";
+                    break;
+                case (int)FriendFoeKind.foe:
+                    label = "foe";
+                    break;
+            }
+
+            return label;
+        }
+
+        //locate current position on a map grid, return false if out of the map
+        public override Map.PosXY GetPoxitionXY(int x, int y)
+        {
+            var result = new PosXY();
+
+            if ((x >= 0) && (y >= 0) && (x < glb_settings.get_map_dim_parameter_x() * glb_settings.get_map_box_size())
+                && (y < glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size()))
+            {
+                result.PosX = x / glb_settings.get_map_box_size();
+                result.PosY = y / glb_settings.get_map_box_size();
+            }
+
+            return result;
+        }
+
         public override void Load_Map()
         {
             //loading the map from the file 
