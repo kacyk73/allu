@@ -90,7 +90,12 @@ namespace allu
 
         private void Board_MouseHover(object sender, EventArgs e)
         {
+            
+        }
 
+        private void Board_MouseMove(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = Convert.ToString(Convert.ToInt32(textBox1.Text) + 1);
         }
     }
 }

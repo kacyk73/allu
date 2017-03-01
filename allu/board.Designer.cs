@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.btn_start2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_start2
@@ -42,11 +43,20 @@
             this.btn_start2.UseVisualStyleBackColor = true;
             this.btn_start2.Click += new System.EventHandler(this.btn_start2_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1244, 283);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "1";
+            // 
             // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 647);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_start2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -57,12 +67,15 @@
             this.Load += new System.EventHandler(this.Board_Load);
             this.DoubleClick += new System.EventHandler(this.Board_DoubleClick);
             this.MouseHover += new System.EventHandler(this.Board_MouseHover);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Board_MouseMove);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btn_start2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
