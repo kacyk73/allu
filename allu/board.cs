@@ -87,5 +87,10 @@ namespace allu
             //set actual graphics to drawer
             Drawer = new DrawElements(CreateGraphics());
         }
+
+        private void Board_MouseHover(object sender, EventArgs e)
+        {
+
+        }
     }
 }
