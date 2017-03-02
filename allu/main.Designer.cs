@@ -43,7 +43,7 @@
             this.lbl_version.Name = "lbl_version";
             this.lbl_version.Size = new System.Drawing.Size(52, 13);
             this.lbl_version.TabIndex = 0;
-            this.lbl_version.Text = "ver. 0.0.1";
+            this.lbl_version.Text = "ver. 0.0.6";
             // 
             // btn_start
             // 
@@ -92,7 +92,7 @@
             this.txt_global_y.Text = "40";
             this.txt_global_y.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // main
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +105,7 @@
             this.Controls.Add(this.lbl_version);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "main";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "main menu";
             this.ResumeLayout(false);

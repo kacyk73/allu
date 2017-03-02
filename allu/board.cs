@@ -127,7 +127,7 @@ namespace allu
                     }
                     else
                     {
-                        //temporary debugging
+                        //temporary debugging 45
                         textBox1.Text = Convert.ToString(999);
 
                         //friend foe label
