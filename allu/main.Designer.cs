@@ -41,9 +41,9 @@
             this.lbl_version.AutoSize = true;
             this.lbl_version.Location = new System.Drawing.Point(208, 226);
             this.lbl_version.Name = "lbl_version";
-            this.lbl_version.Size = new System.Drawing.Size(52, 13);
+            this.lbl_version.Size = new System.Drawing.Size(58, 13);
             this.lbl_version.TabIndex = 0;
-            this.lbl_version.Text = "ver. 0.0.6";
+            this.lbl_version.Text = "ver. 0.0.12";
             // 
             // btn_start
             // 
