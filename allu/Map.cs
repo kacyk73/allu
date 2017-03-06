@@ -11,8 +11,17 @@ namespace allu
     /// </summary>
     public abstract class Map
     {
-        //the map array
-        private int[,] mapTerrain;
+
+
+        //the population array
+        private int[,] population;
+
+        public int[,] Population
+        {
+            get { return population; }
+            set { population = value; }
+        }
+
 
         //the map position class
         public class PosXY
@@ -25,6 +34,9 @@ namespace allu
             public int PosX { get; set; }
             public int PosY { get; set; }
         }
+
+        //the map array
+        private int[,] mapTerrain;
 
         public int[,] MapTerrain
         {
