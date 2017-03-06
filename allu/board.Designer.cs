@@ -34,6 +34,7 @@
             this.labely = new System.Windows.Forms.Label();
             this.lblFriendFoe = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_population = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_start2
@@ -81,11 +82,21 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
+            // lbl_population
+            // 
+            this.lbl_population.AutoSize = true;
+            this.lbl_population.Location = new System.Drawing.Point(1247, 50);
+            this.lbl_population.Name = "lbl_population";
+            this.lbl_population.Size = new System.Drawing.Size(56, 13);
+            this.lbl_population.TabIndex = 5;
+            this.lbl_population.Text = "population";
+            // 
             // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 647);
+            this.Controls.Add(this.lbl_population);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFriendFoe);
             this.Controls.Add(this.labely);
@@ -113,5 +124,6 @@
         private System.Windows.Forms.Label labely;
         private System.Windows.Forms.Label lblFriendFoe;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_population;
     }
 }

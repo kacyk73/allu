@@ -34,7 +34,14 @@ namespace allu
         //generating the population
         public override void GeneratePopulation()
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            int [,] pop = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
+            for (int i = 0; i < glb_settings.get_map_dim_parameter_x(); i++)
+                for (int j = 0; j < glb_settings.get_map_dim_parameter_y(); j++)
+                {
+                    pop[i, j] = rnd.Next(1000, 5000);
+                }
+            Population = pop;
         }
 
         public override string GetLabelsFriendFoe(int i)
@@ -55,7 +62,7 @@ namespace allu
         }
 
         //locate current position on a map grid, return false if out of the map
-        public override Map.PosXY GetPoxitionXY(int x, int y)
+        public override Map.PosXY GetPositionXY(int x, int y)
         {
             var result = new PosXY();
 

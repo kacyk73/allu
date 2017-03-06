@@ -50,7 +50,6 @@ namespace allu
             set { drawer = value; }
         }
 
-
         public Board()
         {
 
@@ -81,6 +80,9 @@ namespace allu
             //load the terrain from files
             Terra.Load_Map();
 
+            //generate the random population
+            terra.GeneratePopulation();
+
             //friend-foe initialisation
             Terra.FriendFoeInitialisation();
 
@@ -88,7 +90,8 @@ namespace allu
             Drawer.Draw_Map(Terra.MapTerrain);
 
             //start button disable
-            btn_start2.Enabled = false;
+            btn_start2.Visible = false;
+
         }
 
         private void Board_DoubleClick(object sender, EventArgs e)
@@ -114,7 +117,7 @@ namespace allu
 
                 //get current mouse position in map grid values
                 var TempPositionXY = new Map.PosXY();
-                TempPositionXY = terra.GetPoxitionXY(e.X, e.Y);
+                TempPositionXY = terra.GetPositionXY(e.X, e.Y);
                 if (CurrentPositionXY != TempPositionXY)
                     if ((TempPositionXY.PosX != GlobalParameters.OutOfRange) && (TempPositionXY.PosY != GlobalParameters.OutOfRange))
                     {
@@ -124,6 +127,8 @@ namespace allu
 
                         //friend foe label
                         lblFriendFoe.Text = terra.GetLabelsFriendFoe(terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
+                        //population label
+                        lbl_population.Text = Convert.ToString(terra.Population[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
                     }
                     else
                     {
