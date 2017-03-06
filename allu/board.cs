@@ -56,7 +56,7 @@ namespace allu
             InitializeComponent();
 
             //draw temporary start button
-            btn_start2.SetBounds(1220, 50, 60, 30);
+            btn_start2.SetBounds(1220, 550, 60, 30);
 
             //call local objects
             this.Terra = new Terrain();

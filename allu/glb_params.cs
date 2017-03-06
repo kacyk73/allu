@@ -24,6 +24,15 @@ namespace allu
         foe = 2
     }
 
+    //population initial settings
+    public enum PopulationSettings
+    {
+        minimal = 1000,
+        maximal = 5000,
+        city_factor = 20
+       
+    }
+
     /// <summary>
     /// the game global settings
     /// </summary>

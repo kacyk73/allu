@@ -36,10 +36,29 @@ namespace allu
         {
             Random rnd = new Random();
             int [,] pop = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
+            int[,] terra = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
+
+            terra = MapTerrain;
             for (int i = 0; i < glb_settings.get_map_dim_parameter_x(); i++)
                 for (int j = 0; j < glb_settings.get_map_dim_parameter_y(); j++)
                 {
-                    pop[i, j] = rnd.Next(1000, 5000);
+                    switch (terra[i, j])
+                    {
+                        case (int)TerrainKind.grass:
+                            pop[i, j] = rnd.Next((int)PopulationSettings.minimal, (int)PopulationSettings.maximal);
+                            break;
+                        case (int)TerrainKind.city:
+                            pop[i, j] = (int)PopulationSettings.city_factor * rnd.Next((int)PopulationSettings.minimal, (int)PopulationSettings.maximal);
+                            break;
+                        case (int)TerrainKind.water:
+                            pop[i, j] = 0;
+                            break;
+                        case (int)TerrainKind.road:
+                            pop[i, j] = 0;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             Population = pop;
         }
