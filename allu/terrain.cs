@@ -31,6 +31,12 @@ namespace allu
             FriendFoe = friend_foe;
         }
 
+        //generating the population
+        public override void GeneratePopulation()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string GetLabelsFriendFoe(int i)
         {
             string label = "";

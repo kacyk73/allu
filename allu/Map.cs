@@ -54,6 +54,7 @@ namespace allu
         }
 
         public abstract void Load_Map();
+        public abstract void GeneratePopulation();
         public abstract void FriendFoeInitialisation();
         public abstract Map.PosXY GetPoxitionXY(int x, int y);
         public abstract string GetLabelsFriendFoe(int i);
