@@ -32,7 +32,7 @@ namespace allu
             set { currentPositionXY = value; }
         }
 
-        //invoke the terrain
+        //invoke the terrain instance
         private Terrain terra;
 
         public Terrain Terra
