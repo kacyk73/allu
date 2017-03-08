@@ -50,6 +50,9 @@ namespace allu
             set { drawer = value; }
         }
 
+        //to be removed
+        ArmyChangedHandler ArmyDel;
+
         public Board()
         {
 
@@ -60,6 +63,9 @@ namespace allu
 
             //call local objects
             this.Terra = new Terrain();
+
+            //demo delegate to be removed
+            ArmyDel = new ArmyChangedHandler(OnDelCall);
 
         }
 
@@ -92,11 +98,22 @@ namespace allu
             //start button disable
             btn_start2.Visible = false;
 
+            
+
         }
 
         private void Board_DoubleClick(object sender, EventArgs e)
         {
+            //delegate demo try
 
+            ArmyDel(5, 4);
+
+
+        }
+        private void OnDelCall(int i, float j)
+        {
+            //demo function to be removed
+            label2.Text = "dupa.8";
         }
 
         private void Board_Load(object sender, EventArgs e)
@@ -138,7 +155,7 @@ namespace allu
                         //friend foe label
                         lblFriendFoe.Text = "";
                     }
-                    
+
             }
 
         }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace allu
 {
-    public class GameDelegates
-    {
-        public delegate void ArmyChangedHandler(int i, float j);
-    }
+
+    public delegate void ArmyChangedHandler(int i, float j);
+
 }
