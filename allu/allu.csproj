@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="draw_elements.cs" />
     <Compile Include="game.cs" />
+    <Compile Include="GameDelegates.cs" />
     <Compile Include="glb_params.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
