@@ -8,5 +8,6 @@ namespace allu
 {
 
     public delegate void ArmyChangedHandler(int i, float j);
+    
 
 }

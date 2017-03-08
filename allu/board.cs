@@ -51,7 +51,9 @@ namespace allu
         }
 
         //to be removed
-        ArmyChangedHandler ArmyDel;
+        public ArmyChangedHandler ArmyDel;
+        //public event ArmyChangedHandler ArmyChanged;
+        
 
         public Board()
         {
@@ -64,7 +66,6 @@ namespace allu
             //call local objects
             this.Terra = new Terrain();
 
-            //demo delegate to be removed
             ArmyDel = new ArmyChangedHandler(OnDelCall);
 
         }
@@ -106,9 +107,18 @@ namespace allu
         {
             //delegate demo try
 
-            ArmyDel(5, 4);
+            ArmyDel(4, 5);
 
 
+        }
+
+        public void OnArmyChanged(int i, float j)
+        {
+            //demo delegate to be removed
+            //
+            //ArmyChanged(i, j);
+            //ArmyChangedHandler ArmyDel = new ArmyChanged() as ArmyChangedHandler;
+            //
         }
         private void OnDelCall(int i, float j)
         {
