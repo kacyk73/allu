@@ -52,7 +52,7 @@ namespace allu
 
         //to be removed
         public ArmyChangedHandler ArmyDel;
-        //public event ArmyChangedHandler ArmyChanged;
+        public event ArmyChangedHandler ArmyChanged;
         
 
         public Board()
@@ -67,7 +67,13 @@ namespace allu
             this.Terra = new Terrain();
 
             ArmyDel = new ArmyChangedHandler(OnDelCall);
+            ArmyChanged += new ArmyChangedHandler(OnDelCall);
 
+        }
+
+        private void Board_ArmyChanged(int i, float j)
+        {
+            throw new NotImplementedException();
         }
 
         private void btn_start2_Click(object sender, EventArgs e)
@@ -107,8 +113,8 @@ namespace allu
         {
             //delegate demo try
 
-            ArmyDel(4, 5);
-
+            //ArmyDel(4, 5);
+            ArmyChanged(4, 5);
 
         }
 
