@@ -110,10 +110,10 @@ namespace allu
 
 
         }
-        private void OnDelCall(int i, float j)
+        private  void OnDelCall(int i, float j)
         {
             //demo function to be removed
-            label2.Text = "dupa.8";
+            label2.Text = "dupa. 8";
         }
 
         private void Board_Load(object sender, EventArgs e)
