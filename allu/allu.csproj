@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmyChangedEventArgs.cs" />
     <Compile Include="board.cs">
       <SubType>Form</SubType>
     </Compile>

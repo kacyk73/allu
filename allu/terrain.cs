@@ -29,6 +29,7 @@ namespace allu
                         friend_foe[i, j] = (int)FriendFoeKind.foe;
                 }
             FriendFoe = friend_foe;
+
         }
 
         //generating the population

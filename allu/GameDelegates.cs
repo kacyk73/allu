@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace allu
 {
 
-    public delegate void ArmyChangedHandler(int i, float j);
+    public delegate void ArmyChangedHandler(object sender, ArmyChangedEventArgs e);
     
 
 }

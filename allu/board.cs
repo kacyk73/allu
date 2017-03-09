@@ -52,7 +52,7 @@ namespace allu
 
         //to be removed
         public ArmyChangedHandler ArmyDel;
-        public event ArmyChangedHandler ArmyChanged;
+        public event EventHandler<ArmyChangedEventArgs> ArmyChanged;
         
 
         public Board()
@@ -67,7 +67,7 @@ namespace allu
             this.Terra = new Terrain();
 
             ArmyDel = new ArmyChangedHandler(OnDelCall);
-            ArmyChanged += new ArmyChangedHandler(OnDelCall);
+            ArmyChanged += new EventHandler<ArmyChangedEventArgs>(OnDelCall);
 
         }
 
@@ -114,11 +114,11 @@ namespace allu
             //delegate demo try
 
             //ArmyDel(4, 5);
-            ArmyChanged(4, 5);
+            ArmyChanged(this, new ArmyChangedEventArgs(4, 5));
 
         }
 
-        public void OnArmyChanged(int i, float j)
+        public void OnArmyChanged(object sender, ArmyChangedEventArgs e)
         {
             //demo delegate to be removed
             //
@@ -126,7 +126,7 @@ namespace allu
             //ArmyChangedHandler ArmyDel = new ArmyChanged() as ArmyChangedHandler;
             //
         }
-        private void OnDelCall(int i, float j)
+        private void OnDelCall(object sender, ArmyChangedEventArgs e)
         {
             //demo function to be removed
             label2.Text = "dupa.8";
