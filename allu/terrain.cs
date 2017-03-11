@@ -32,7 +32,7 @@ namespace allu
 
         }
 
-        //generating the population/
+        //generating the population
         public override void GeneratePopulation()
         {
             Random rnd = new Random();
