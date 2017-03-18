@@ -24,9 +24,9 @@ namespace allu
                 for (int j = 0; j < glb_settings.get_map_dim_parameter_y(); j++)
                 {
                     if (i < glb_settings.get_map_dim_parameter_x() / 2)
-                        friend_foe[i, j] = (int)FriendFoeKind.friend;
+                        friend_foe[i, j] = (int)FriendFoeKinds.friend;
                     else
-                        friend_foe[i, j] = (int)FriendFoeKind.foe;
+                        friend_foe[i, j] = (int)FriendFoeKinds.foe;
                 }
             FriendFoe = friend_foe;
 
@@ -45,16 +45,16 @@ namespace allu
                 {
                     switch (terra[i, j])
                     {
-                        case (int)TerrainKind.grass:
+                        case (int)TerrainKinds.grass:
                             pop[i, j] = rnd.Next((int)PopulationSettings.minimal, (int)PopulationSettings.maximal);
                             break;
-                        case (int)TerrainKind.city:
+                        case (int)TerrainKinds.city:
                             pop[i, j] = (int)PopulationSettings.city_factor * rnd.Next((int)PopulationSettings.minimal, (int)PopulationSettings.maximal);
                             break;
-                        case (int)TerrainKind.water:
+                        case (int)TerrainKinds.water:
                             pop[i, j] = 0;
                             break;
-                        case (int)TerrainKind.road:
+                        case (int)TerrainKinds.road:
                             pop[i, j] = 0;
                             break;
                         default:
@@ -70,10 +70,10 @@ namespace allu
 
             switch (i)
             {
-                case (int)FriendFoeKind.friend:
+                case (int)FriendFoeKinds.friend:
                     label = "friend";
                     break;
-                case (int)FriendFoeKind.foe:
+                case (int)FriendFoeKinds.foe:
                     label = "foe";
                     break;
             }
@@ -117,19 +117,19 @@ namespace allu
                     switch (s)
                     {
                         case 'v':
-                            terr[x, y] = (int)TerrainKind.grass;
+                            terr[x, y] = (int)TerrainKinds.grass;
                             x++;
                             break;
                         case 'w':
-                            terr[x, y] = (int)TerrainKind.water;
+                            terr[x, y] = (int)TerrainKinds.water;
                             x++;
                             break;
                         case 'r':
-                            terr[x, y] = (int)TerrainKind.road;
+                            terr[x, y] = (int)TerrainKinds.road;
                             x++;
                             break;
                         case 'c':
-                            terr[x, y] = (int)TerrainKind.city;
+                            terr[x, y] = (int)TerrainKinds.city;
                             x++;
                             break;
                         default:

@@ -80,16 +80,16 @@ namespace allu
 
             switch (terra[i, j])
             {
-                case (int)TerrainKind.grass:
+                case (int)TerrainKinds.grass:
                     c = Brushes.DarkGreen;
                     break;
-                case (int)TerrainKind.road:
+                case (int)TerrainKinds.road:
                     c = Brushes.DarkSlateGray;
                     break;
-                case (int)TerrainKind.city:
+                case (int)TerrainKinds.city:
                     c = Brushes.DarkOliveGreen;
                     break;
-                case (int)TerrainKind.water:
+                case (int)TerrainKinds.water:
                     c = Brushes.Navy;
                     break;
                 default:
