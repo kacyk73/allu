@@ -8,6 +8,19 @@ using System.Windows.Forms;
 namespace allu
 {
 
+    //army types
+    public enum ArmyType
+    {
+        light_infantry = 1,
+        heavy_infantry = 2,
+        light_cavalry = 3,
+        heavy_cavalry = 4,
+        light_artillery = 5,
+        heavy_artillery = 6,
+        logistic = 7,
+        recruitment = 8
+    }
+
     //terrain type
     public enum TerrainKind
     {

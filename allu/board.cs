@@ -108,7 +108,7 @@ namespace allu
             //temporary one unit generated
 
             var pos = new PosXY { PosX = 10, PosY = 12 };
-            var army = new Army((int)FriendFoeKind.friend);
+            var army = new Army((int)FriendFoeKind.friend, (int)ArmyType.light_infantry);
             terra.DicArmy.Add(pos, army);
             
 

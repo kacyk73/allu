@@ -104,10 +104,17 @@ namespace allu
         public override void DrawArmyXY(PosXY pos)
         {
             //set color
-            var c = Color.Red;
+            var c = Color.White;
             var pen = new System.Drawing.Pen(c);
 
-            graph.DrawLine(pen, pos.PosX * glb_settings.get_map_box_size()+3, pos.PosY * glb_settings.get_map_box_size() + 3, pos.PosX * glb_settings.get_map_box_size() + 13, pos.PosY * glb_settings.get_map_box_size() + 13);
+            var x = pos.PosX * glb_settings.get_map_box_size();
+            var y = pos.PosY * glb_settings.get_map_box_size();
+
+            //infantry hardcoded
+            graph.DrawLine(pen, x + 2, y + 4, x + 10, y + 4);
+            graph.DrawLine(pen, x + 2, y + 14, x + 10, y + 14);
+            graph.DrawLine(pen, x + 6, y + 4, x + 6, y + 14);
+            graph.DrawLine(pen, x + 2, y + 2, x + 10, y + 2);
         }
     }
 }
