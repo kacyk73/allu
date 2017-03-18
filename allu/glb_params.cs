@@ -88,6 +88,8 @@ namespace allu
             return map_menu_offset;
         }
 
+        public static readonly string[] ArmyTypeLabels = { "Light Infantry", "Heavy Infantry", "Light Cavalry", "Heavy Cavalry", "Light Artillery", "Heavy Artilery", "Logistics", "Recruitement" };
+
 
     }
 }

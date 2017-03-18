@@ -35,6 +35,7 @@
             this.lblFriendFoe = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_population = new System.Windows.Forms.Label();
+            this.lbl_army_type = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_start2
@@ -91,11 +92,21 @@
             this.lbl_population.TabIndex = 5;
             this.lbl_population.Text = "population";
             // 
+            // lbl_army_type
+            // 
+            this.lbl_army_type.AutoSize = true;
+            this.lbl_army_type.Location = new System.Drawing.Point(1247, 75);
+            this.lbl_army_type.Name = "lbl_army_type";
+            this.lbl_army_type.Size = new System.Drawing.Size(55, 13);
+            this.lbl_army_type.TabIndex = 6;
+            this.lbl_army_type.Text = "army_type";
+            // 
             // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 647);
+            this.Controls.Add(this.lbl_army_type);
             this.Controls.Add(this.lbl_population);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFriendFoe);
@@ -125,5 +136,6 @@
         private System.Windows.Forms.Label lblFriendFoe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_population;
+        private System.Windows.Forms.Label lbl_army_type;
     }
 }

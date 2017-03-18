@@ -36,6 +36,7 @@ namespace allu
         public override void GeneratePopulation()
         {
             Random rnd = new Random();
+            //initiate map arrays
             int [,] pop = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
             int[,] terra = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
 
@@ -94,6 +95,11 @@ namespace allu
             }
 
             return result;
+        }
+
+        public override void IsArmyInitialisation()
+        {
+            IsArmy = new bool[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
         }
 
         public override void Load_Map()

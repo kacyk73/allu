@@ -99,6 +99,9 @@ namespace allu
             //friend-foe initialisation
             Terra.FriendFoeInitialisation();
 
+            //isarmy initilisation
+            Terra.IsArmyInitialisation();
+
             //draw the whole map
             Drawer.DrawMap(Terra.MapTerrain);
 
@@ -109,9 +112,10 @@ namespace allu
 
             var pos = new PosXY { PosX = 10, PosY = 12 };
             var army = new Army((int)FriendFoeKind.friend, (int)ArmyType.light_infantry);
-            terra.DicArmy.Add(pos, army);
-            
-
+            //create unit
+            Terra.ArmyUnits.Add(pos, army);
+            //mark on the map
+            Terra.IsArmy[pos.PosX, pos.PosY] = true;
         }
 
         private void Board_DoubleClick(object sender, EventArgs e)
@@ -155,42 +159,60 @@ namespace allu
         {
             if (GameIsOn)
             {
-
-                //get current mouse position in map grid values
-                var TempPositionXY = new PosXY();
-                TempPositionXY = terra.GetPositionXY(e.X, e.Y);
-                if (CurrentPositionXY != TempPositionXY)
-                    if ((TempPositionXY.PosX != GlobalParameters.OutOfRange) && (TempPositionXY.PosY != GlobalParameters.OutOfRange))
-                    {
-                        CurrentPositionXY = TempPositionXY;
-                        textBox1.Text = Convert.ToString(Convert.ToInt32(CurrentPositionXY.PosX));
-                        labely.Text = Convert.ToString(Convert.ToInt32(CurrentPositionXY.PosY));
-
-                        //friend foe label
-                        lblFriendFoe.Text = terra.GetLabelsFriendFoe(terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
-                        if (terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY] == (int)FriendFoeKind.friend)
-                            lblFriendFoe.ForeColor = Color.Green;
-                        else
-                            lblFriendFoe.ForeColor = Color.Red;
-                        //population label
-                        var i = terra.Population[CurrentPositionXY.PosX, CurrentPositionXY.PosY];
-                        var str = i.ToString("# ### ### ###");
-                        lbl_population.Text = str;
-                    }
-                    else
-                    {
-                        //temporary debugging 45
-                        textBox1.Text = Convert.ToString(999);
-
-                        //friend foe label
-                        lblFriendFoe.Text = "";
-
-                        //population label
-                        lbl_population.Text = "";
-                    }
+                RefreshInfoPaneXY(e);
 
             }
 
+        }
+
+        private void RefreshInfoPaneXY(MouseEventArgs e)
+        {
+            //get current mouse position in map grid values
+            var TempPositionXY = new PosXY();
+            TempPositionXY = Terra.GetPositionXY(e.X, e.Y);
+            if (CurrentPositionXY != TempPositionXY)
+                if ((TempPositionXY.PosX != GlobalParameters.OutOfRange) && (TempPositionXY.PosY != GlobalParameters.OutOfRange))
+                {
+                    CurrentPositionXY = TempPositionXY;
+                    textBox1.Text = Convert.ToString(Convert.ToInt32(CurrentPositionXY.PosX));
+                    labely.Text = Convert.ToString(Convert.ToInt32(CurrentPositionXY.PosY));
+
+                    //friend foe label
+                    lblFriendFoe.Text = Terra.GetLabelsFriendFoe(Terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
+                    if (Terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY] == (int)FriendFoeKind.friend)
+                        lblFriendFoe.ForeColor = Color.Green;
+                    else
+                        lblFriendFoe.ForeColor = Color.Red;
+
+                    //population label
+                    var i = Terra.Population[CurrentPositionXY.PosX, CurrentPositionXY.PosY];
+                    var str = i.ToString("# ### ### ###");
+                    lbl_population.Text = str;
+
+                    //army label
+                    if (Terra.IsArmy[CurrentPositionXY.PosX, CurrentPositionXY.PosY]) //if there is XY army on the map
+                    {
+                        var army_type = Convert.ToString(Terra.ArmyUnits[CurrentPositionXY].ArmyType);
+                        string fun = GlobalParameters.ArmyTypeLabels[Convert.ToInt32(army_type)];
+                        lbl_army_type.Text = fun;
+                    }
+                    else
+                    {
+                        //army label
+                        lbl_army_type.Text = "";
+                    }
+                }
+                else
+                {
+                    //temporary debugging 45
+                    textBox1.Text = Convert.ToString(999);
+
+                    //friend foe label
+                    lblFriendFoe.Text = "";
+
+                    //population label
+                    lbl_population.Text = "";
+                }
         }
     }
 }

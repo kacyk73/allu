@@ -12,13 +12,16 @@ namespace allu
     public abstract class Map
     {
         //army dictionary
-        //private Dictionary<PosXY, Army> dicArmy;
+        public Dictionary<PosXY, Army> ArmyUnits = new Dictionary<PosXY, Army>();
 
-        public Dictionary<PosXY, Army> DicArmy = new Dictionary<PosXY, Army>();
-        //{
-        //    get { return dicArmy; }
-        //    set { dicArmy = value; }
-        //}
+        //army helper array for performance purposes
+        private bool[,] isArmy;
+
+        public bool[,] IsArmy
+        {
+            get { return isArmy; }
+            set { isArmy = value; }
+        }
 
 
         //the population array
@@ -53,5 +56,6 @@ namespace allu
         public abstract void FriendFoeInitialisation();
         public abstract PosXY GetPositionXY(int x, int y);
         public abstract string GetLabelsFriendFoe(int i);
+        public abstract void IsArmyInitialisation();
     }
 }
