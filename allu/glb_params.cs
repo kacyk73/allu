@@ -9,7 +9,7 @@ namespace allu
 {
 
     //terrain type
-    public enum TerrainKinds
+    public enum TerrainKind
     {
         grass = 1,
         water = 2,
@@ -18,7 +18,7 @@ namespace allu
     }
 
     //friend-foe definition
-    public enum FriendFoeKinds
+    public enum FriendFoeKind
     {
         friend = 1,
         foe = 2

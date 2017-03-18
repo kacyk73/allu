@@ -22,7 +22,7 @@ namespace allu.Tests
 
             //act
             terra.FriendFoeInitialisation();
-            var expected = (int)FriendFoeKinds.foe;
+            var expected = (int)FriendFoeKind.foe;
 
             //assert
             Assert.AreEqual(terra.FriendFoe[30, 0], expected);
@@ -43,7 +43,7 @@ namespace allu.Tests
 
             //act
             terra.Load_Map();
-            var expected = (int)TerrainKinds.grass;
+            var expected = (int)TerrainKind.grass;
 
             //assert
             Assert.AreEqual(terra.MapTerrain[0, 0], expected);
