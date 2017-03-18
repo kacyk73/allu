@@ -101,20 +101,57 @@ namespace allu
             graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
         }
 
-        public override void DrawArmyXY(PosXY pos)
+        public override void DrawArmyXY(PosXY pos, Terrain terra)
         {
             //set color
             var c = Color.White;
+            if (terra.FriendFoe[pos.PosX, pos.PosY] != (int)FriendFoeKind.friend)
+                c = Color.Orange;
+
             var pen = new System.Drawing.Pen(c);
 
             var x = pos.PosX * glb_settings.get_map_box_size();
             var y = pos.PosY * glb_settings.get_map_box_size();
 
-            //infantry hardcoded
+            var army_type = terra.ArmyUnits[pos];
+
+            switch ((int)army_type.ArmyType)
+            {
+                case (int)ArmyType.light_infantry:
+                    //infantry 
+                    DrawInfantry(pen, x, y);
+                    break;
+                case (int)ArmyType.heavy_infantry:
+                    //infantry 
+                    DrawInfantry(pen, x, y);
+                    break;
+                default:
+                    break;
+            }
+
+            //heavy bars added
+            if ((int)army_type.ArmyType == (int)ArmyType.heavy_infantry || (int)army_type.ArmyType == (int)ArmyType.heavy_cavalry || (int)army_type.ArmyType == (int)ArmyType.heavy_artillery)
+            {
+                graph.DrawLine(pen, x + 2, y + 2, x + 10, y + 2);
+            }
+        }
+
+        private void DrawInfantry(Pen pen, int x, int y)
+        {
             graph.DrawLine(pen, x + 2, y + 4, x + 10, y + 4);
             graph.DrawLine(pen, x + 2, y + 14, x + 10, y + 14);
             graph.DrawLine(pen, x + 6, y + 4, x + 6, y + 14);
-            graph.DrawLine(pen, x + 2, y + 2, x + 10, y + 2);
         }
+
+        public override void DrawArmy(Terrain Terra)
+        {
+            var pos = new PosXY();
+            foreach (var item in Terra.ArmyUnits)
+            {
+                pos = item.Key;
+                DrawArmyXY(pos, Terra);
+            }
+        }
+
     }
 }

@@ -57,5 +57,6 @@ namespace allu
         public abstract PosXY GetPositionXY(int x, int y);
         public abstract string GetLabelsFriendFoe(int i);
         public abstract void IsArmyInitialisation();
+        public abstract void GenerateArmy();
     }
 }

@@ -105,17 +105,17 @@ namespace allu
             //draw the whole map
             Drawer.DrawMap(Terra.MapTerrain);
 
+            //temporary one unit generated
+
+            Terra.GenerateArmy();
+
+            //draw army
+            Drawer.DrawArmy(Terra);
+
             //start button disable
             btn_start2.Visible = false;
 
-            //temporary one unit generated
 
-            var pos = new PosXY { PosX = 10, PosY = 12 };
-            var army = new Army((int)FriendFoeKind.friend, (int)ArmyType.light_infantry);
-            //create unit
-            Terra.ArmyUnits.Add(pos, army);
-            //mark on the map
-            Terra.IsArmy[pos.PosX, pos.PosY] = true;
         }
 
         private void Board_DoubleClick(object sender, EventArgs e)
@@ -124,10 +124,7 @@ namespace allu
 
             //ArmyDel(4, 5);
             ArmyChanged(this, new ArmyChangedEventArgs(4, 5));
-
-            var pos = new PosXY { PosX = 10, PosY = 12 };
-            drawer.DrawArmyXY(pos);
-
+            
         }
 
         public void OnArmyChanged(object sender, ArmyChangedEventArgs e)
@@ -193,7 +190,7 @@ namespace allu
                     if (Terra.IsArmy[CurrentPositionXY.PosX, CurrentPositionXY.PosY]) //if there is XY army on the map
                     {
                         var army_type = Convert.ToString(Terra.ArmyUnits[CurrentPositionXY].ArmyType);
-                        string fun = GlobalParameters.ArmyTypeLabels[Convert.ToInt32(army_type)];
+                        string fun = GlobalParameters.ArmyTypeLabels[Convert.ToInt32(army_type)-1];
                         lbl_army_type.Text = fun;
                     }
                     else

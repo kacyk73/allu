@@ -17,6 +17,8 @@ namespace allu
         public abstract void DrawMap(int [,] terra);
 
         //army elements
-        public abstract void DrawArmyXY(PosXY pos);
+        public abstract void DrawArmyXY(PosXY pos, Terrain Terra);
+        public abstract void DrawArmy(Terrain Terra);
+        
     }
 }

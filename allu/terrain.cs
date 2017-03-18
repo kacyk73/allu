@@ -37,7 +37,7 @@ namespace allu
         {
             Random rnd = new Random();
             //initiate map arrays
-            int [,] pop = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
+            int[,] pop = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
             int[,] terra = new int[glb_settings.get_map_dim_parameter_x(), glb_settings.get_map_dim_parameter_y()];
 
             terra = MapTerrain;
@@ -145,6 +145,46 @@ namespace allu
                 y++;
             }
             MapTerrain = terr;
+        }
+
+        public override void GenerateArmy()
+        {
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.light_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_infantry]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.light_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_infantry]);
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.heavy_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_infantry]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.heavy_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_infantry]);
+        }
+
+        private void GenerateArmySideType(int side, int army_type, int qty)
+        {
+            var rnd = new Random();
+
+
+            while (qty > 0)
+            {
+
+                var pos = new PosXY();
+                if (side == (int)FriendFoeKind.friend)
+                {
+                    pos.PosX = rnd.Next(0, glb_settings.get_map_dim_parameter_x() / 2 - 5);
+                    pos.PosY = rnd.Next(0, glb_settings.get_map_dim_parameter_y());
+                }
+                else
+                {
+                    pos.PosX = rnd.Next(glb_settings.get_map_dim_parameter_x() / 2 + 5, glb_settings.get_map_dim_parameter_x());
+                    pos.PosY = rnd.Next(0, glb_settings.get_map_dim_parameter_y());
+                }
+                if (!IsArmy[pos.PosX, pos.PosY]) //empty slot
+                    if (MapTerrain[pos.PosX, pos.PosY] == (int)TerrainKind.grass || MapTerrain[pos.PosX, pos.PosY] == (int)TerrainKind.city) //not on roads or water
+                    {
+                        var army = new Army(side, army_type);
+                        //create unit
+                        ArmyUnits.Add(pos, army);
+                        //mark on the map
+                        IsArmy[pos.PosX, pos.PosY] = true;
+                        qty--;
+                    }
+            }
         }
     }
 }

@@ -43,7 +43,7 @@ namespace allu
         minimal = 1000,
         maximal = 5000,
         city_factor = 20
-       
+
     }
 
     /// <summary>
@@ -90,6 +90,12 @@ namespace allu
 
         public static readonly string[] ArmyTypeLabels = { "Light Infantry", "Heavy Infantry", "Light Cavalry", "Heavy Cavalry", "Light Artillery", "Heavy Artilery", "Logistics", "Recruitement" };
 
-
+        public static readonly Dictionary<int, int> ArmyUnitsQty = new Dictionary<int, int>
+        {
+            [(int)ArmyType.light_infantry] = 100,
+            [(int)ArmyType.heavy_infantry] = 10,
+            [(int)ArmyType.light_cavalry] = 10,
+            [(int)ArmyType.heavy_cavalry] = 10
+        };
     }
 }
