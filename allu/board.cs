@@ -60,7 +60,7 @@ namespace allu
 
             InitializeComponent();
 
-            //draw temporary start but ton
+            //draw temporary start button
             btn_start2.SetBounds(1220, 550, 60, 30);
 
             //call local objects
