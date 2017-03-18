@@ -11,8 +11,12 @@ namespace allu
     /// </summary>
     public abstract class Game
     {
-        public abstract void Draw_Grid();
-        public abstract void Draw_Border_Initial();
-        public abstract void Draw_Map(int [,] terra);
+        //graphical board elements
+        public abstract void DrawGrid();
+        public abstract void DrawBorderInitial();
+        public abstract void DrawMap(int [,] terra);
+
+        //army elements
+        public abstract void DrawArmyXY(PosXY pos);
     }
 }

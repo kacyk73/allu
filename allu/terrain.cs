@@ -82,7 +82,7 @@ namespace allu
         }
 
         //locate current position on a map grid, return false if out of the map
-        public override Map.PosXY GetPositionXY(int x, int y)
+        public override PosXY GetPositionXY(int x, int y)
         {
             var result = new PosXY();
 

@@ -11,6 +11,14 @@ namespace allu
     /// </summary>
     public abstract class Map
     {
+        //army dictionary
+        //private Dictionary<PosXY, Army> dicArmy;
+
+        public Dictionary<PosXY, Army> DicArmy = new Dictionary<PosXY, Army>();
+        //{
+        //    get { return dicArmy; }
+        //    set { dicArmy = value; }
+        //}
 
 
         //the population array
@@ -20,19 +28,6 @@ namespace allu
         {
             get { return population; }
             set { population = value; }
-        }
-
-
-        //the map position class
-        public class PosXY
-        {
-            public PosXY()
-            {
-                PosX = GlobalParameters.OutOfRange;
-                PosY = GlobalParameters.OutOfRange;
-            }
-            public int PosX { get; set; }
-            public int PosY { get; set; }
         }
 
         //the map array
@@ -56,7 +51,7 @@ namespace allu
         public abstract void Load_Map();
         public abstract void GeneratePopulation();
         public abstract void FriendFoeInitialisation();
-        public abstract Map.PosXY GetPositionXY(int x, int y);
+        public abstract PosXY GetPositionXY(int x, int y);
         public abstract string GetLabelsFriendFoe(int i);
     }
 }

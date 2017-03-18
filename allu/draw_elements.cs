@@ -35,7 +35,7 @@ namespace allu
         }
 
 
-        public override void Draw_Grid()
+        public override void DrawGrid()
         {
             //set color
             var c = Color.Black;
@@ -51,7 +51,7 @@ namespace allu
             }
         }
 
-        public override void Draw_Border_Initial()
+        public override void DrawBorderInitial()
         {
             //set color
             var c = Color.Red;
@@ -60,7 +60,7 @@ namespace allu
             graph.DrawLine(pen, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), 0, glb_settings.get_map_dim_parameter_x() / 2 * glb_settings.get_map_box_size(), glb_settings.get_map_dim_parameter_y() * glb_settings.get_map_box_size());
         }
 
-        public override void Draw_Map(int[,] terra)
+        public override void DrawMap(int[,] terra)
         {
 
             //iterate through the map
@@ -68,13 +68,13 @@ namespace allu
             {
                 for (int j = 0; j < terra.GetLength(1); j++)
                 {
-                    Draw_box_XY(terra, i, j);
+                    DrawBoxXY(terra, i, j);
 
                 }
             }
         }
 
-        private void Draw_box_XY(int[,] terra, int i, int j)
+        private void DrawBoxXY(int[,] terra, int i, int j)
         {
             Brush c;
 
@@ -99,6 +99,15 @@ namespace allu
 
             //draw actual box
             graph.FillRectangle(c, i * glb_settings.get_map_box_size() + 1, j * glb_settings.get_map_box_size() + 1, glb_settings.get_map_box_size() - 1, glb_settings.get_map_box_size() - 1);
+        }
+
+        public override void DrawArmyXY(PosXY pos)
+        {
+            //set color
+            var c = Color.Red;
+            var pen = new System.Drawing.Pen(c);
+
+            graph.DrawLine(pen, pos.PosX * glb_settings.get_map_box_size()+3, pos.PosY * glb_settings.get_map_box_size() + 3, pos.PosX * glb_settings.get_map_box_size() + 13, pos.PosY * glb_settings.get_map_box_size() + 13);
         }
     }
 }

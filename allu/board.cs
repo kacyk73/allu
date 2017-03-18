@@ -24,9 +24,9 @@ namespace allu
         public GlobalParameters glb_settings;
 
         //invoke map position class
-        private Map.PosXY currentPositionXY;
+        private PosXY currentPositionXY;
 
-        public Map.PosXY CurrentPositionXY
+        public PosXY CurrentPositionXY
         {
             get { return currentPositionXY; }
             set { currentPositionXY = value; }
@@ -87,8 +87,8 @@ namespace allu
             //drawer = new DrawElements(CreateGraphics());
             Drawer.glb_settings = glb_settings;
             //var x = CreateGraphics();
-            Drawer.Draw_Grid();
-            Drawer.Draw_Border_Initial();
+            Drawer.DrawGrid();
+            Drawer.DrawBorderInitial();
 
             //load the terrain from files
             Terra.Load_Map();
@@ -100,11 +100,16 @@ namespace allu
             Terra.FriendFoeInitialisation();
 
             //draw the whole map
-            Drawer.Draw_Map(Terra.MapTerrain);
+            Drawer.DrawMap(Terra.MapTerrain);
 
             //start button disable
             btn_start2.Visible = false;
 
+            //temporary one unit generated
+
+            var pos = new PosXY { PosX = 10, PosY = 12 };
+            var army = new Army((int)FriendFoeKind.friend);
+            terra.DicArmy.Add(pos, army);
             
 
         }
@@ -115,6 +120,9 @@ namespace allu
 
             //ArmyDel(4, 5);
             ArmyChanged(this, new ArmyChangedEventArgs(4, 5));
+
+            var pos = new PosXY { PosX = 10, PosY = 12 };
+            drawer.DrawArmyXY(pos);
 
         }
 
@@ -149,7 +157,7 @@ namespace allu
             {
 
                 //get current mouse position in map grid values
-                var TempPositionXY = new Map.PosXY();
+                var TempPositionXY = new PosXY();
                 TempPositionXY = terra.GetPositionXY(e.X, e.Y);
                 if (CurrentPositionXY != TempPositionXY)
                     if ((TempPositionXY.PosX != GlobalParameters.OutOfRange) && (TempPositionXY.PosY != GlobalParameters.OutOfRange))
@@ -160,8 +168,14 @@ namespace allu
 
                         //friend foe label
                         lblFriendFoe.Text = terra.GetLabelsFriendFoe(terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
+                        if (terra.FriendFoe[CurrentPositionXY.PosX, CurrentPositionXY.PosY] == (int)FriendFoeKind.friend)
+                            lblFriendFoe.ForeColor = Color.Green;
+                        else
+                            lblFriendFoe.ForeColor = Color.Red;
                         //population label
-                        lbl_population.Text = Convert.ToString(terra.Population[CurrentPositionXY.PosX, CurrentPositionXY.PosY]);
+                        var i = terra.Population[CurrentPositionXY.PosX, CurrentPositionXY.PosY];
+                        var str = i.ToString("# ### ### ###");
+                        lbl_population.Text = str;
                     }
                     else
                     {
@@ -170,6 +184,9 @@ namespace allu
 
                         //friend foe label
                         lblFriendFoe.Text = "";
+
+                        //population label
+                        lbl_population.Text = "";
                     }
 
             }
