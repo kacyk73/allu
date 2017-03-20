@@ -118,7 +118,7 @@ namespace allu
             switch ((int)army_type.ArmyType)
             {
                 case (int)ArmyType.light_infantry:
-                    //infantry 
+                    //infantry light
                     DrawInfantry(pen, x, y);
                     break;
                 case (int)ArmyType.heavy_infantry:
