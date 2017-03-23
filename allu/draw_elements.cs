@@ -122,7 +122,7 @@ namespace allu
                     DrawInfantry(pen, x, y);
                     break;
                 case (int)ArmyType.heavy_infantry:
-                    //infantry heavy
+                    //infantry hea vy
                     DrawInfantry(pen, x, y);
                     break;
                 default:
