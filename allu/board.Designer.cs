@@ -33,7 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labely = new System.Windows.Forms.Label();
             this.lblFriendFoe = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_memory = new System.Windows.Forms.Label();
             this.lbl_population = new System.Windows.Forms.Label();
             this.lbl_army_type = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -74,14 +74,14 @@
             this.lblFriendFoe.TabIndex = 3;
             this.lblFriendFoe.Text = "FriendFoe";
             // 
-            // label2
+            // lbl_memory
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1276, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.lbl_memory.AutoSize = true;
+            this.lbl_memory.Location = new System.Drawing.Point(1276, 128);
+            this.lbl_memory.Name = "lbl_memory";
+            this.lbl_memory.Size = new System.Drawing.Size(35, 13);
+            this.lbl_memory.TabIndex = 4;
+            this.lbl_memory.Text = "label2";
             // 
             // lbl_population
             // 
@@ -108,7 +108,7 @@
             this.ClientSize = new System.Drawing.Size(1380, 647);
             this.Controls.Add(this.lbl_army_type);
             this.Controls.Add(this.lbl_population);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_memory);
             this.Controls.Add(this.lblFriendFoe);
             this.Controls.Add(this.labely);
             this.Controls.Add(this.textBox1);
@@ -134,7 +134,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labely;
         private System.Windows.Forms.Label lblFriendFoe;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_memory;
         private System.Windows.Forms.Label lbl_population;
         private System.Windows.Forms.Label lbl_army_type;
     }

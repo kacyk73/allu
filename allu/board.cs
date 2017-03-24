@@ -112,6 +112,9 @@ namespace allu
             //draw army
             Drawer.DrawArmy(Terra);
 
+            //memory check: temporary
+            lbl_memory.Text = Convert.ToString(GC.GetTotalMemory(forceFullCollection: true));
+
             //start button disable
             btn_start2.Visible = false;
 
@@ -138,7 +141,7 @@ namespace allu
         private void OnDelCall(object sender, ArmyChangedEventArgs e)
         {
             //demo function to be removed
-            label2.Text = "dupa.8";
+            lbl_memory.Text = "dupa.8";
         }
 
         private void Board_Load(object sender, EventArgs e)
