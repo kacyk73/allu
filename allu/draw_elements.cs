@@ -125,6 +125,30 @@ namespace allu
                     //infantry heavy
                     DrawInfantry(pen, x, y);
                     break;
+                case (int)ArmyType.light_cavalry:
+                    //cavalry light
+                    DrawCavalry(pen, x, y);
+                    break;
+                case (int)ArmyType.heavy_cavalry:
+                    //cavalry light
+                    DrawCavalry(pen, x, y);
+                    break;
+                case (int)ArmyType.light_artillery:
+                    //cavalry light
+                    DrawArtillery(pen, x, y);
+                    break;
+                case (int)ArmyType.heavy_artillery:
+                    //cavalry light
+                    DrawArtillery(pen, x, y);
+                    break;
+                case (int)ArmyType.logistic:
+                    //cavalry light
+                    DrawLogistic(pen, x, y);
+                    break;
+                case (int)ArmyType.recruitment:
+                    //cavalry light
+                    DrawRecruitment(pen, x, y);
+                    break;
                 default:
                     break;
             }
@@ -142,6 +166,37 @@ namespace allu
             graph.DrawLine(pen, x + 2, y + 14, x + 10, y + 14);
             graph.DrawLine(pen, x + 6, y + 4, x + 6, y + 14);
         }
+
+        private void DrawCavalry(Pen pen, int x, int y)
+        {
+            graph.DrawLine(pen, x + 2, y + 4, x + 10, y + 4);
+            graph.DrawLine(pen, x + 2, y + 14, x + 10, y + 14);
+            graph.DrawLine(pen, x + 2, y + 4, x + 2, y + 14);
+        }
+
+        private void DrawArtillery(Pen pen, int x, int y)
+        {
+            graph.DrawLine(pen, x + 2, y + 4, x + 10, y + 4);
+            graph.DrawLine(pen, x + 2, y + 9, x + 10, y + 9);
+            graph.DrawLine(pen, x + 2, y + 4, x + 2, y + 14);
+            graph.DrawLine(pen, x + 10, y + 4, x + 10, y + 14);
+        }
+
+        private void DrawLogistic(Pen pen, int x, int y)
+        {
+            graph.DrawLine(pen, x + 2, y + 14, x + 10, y + 14);
+            graph.DrawLine(pen, x + 2, y + 4, x + 2, y + 14);
+        }
+
+        private void DrawRecruitment(Pen pen, int x, int y)
+        {
+            graph.DrawLine(pen, x + 2, y + 4, x + 10, y + 4);
+            graph.DrawLine(pen, x + 2, y + 9, x + 10, y + 9);
+            graph.DrawLine(pen, x + 2, y + 4, x + 2, y + 14);
+            graph.DrawLine(pen, x + 10, y + 4, x + 10, y + 9);
+            graph.DrawLine(pen, x + 2, y + 9, x + 10, y + 14);
+        }
+
 
         public override void DrawArmy(Terrain Terra)
         {

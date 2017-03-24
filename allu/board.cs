@@ -121,6 +121,14 @@ namespace allu
 
         }
 
+        //protect against graphics redraw
+        protected override void WndProc(ref Message m)
+        {
+            // Suppress the WM_UPDATEUISTATE message
+            if (m.Msg == 0x128) return;
+            base.WndProc(ref m);
+        }
+
         private void Board_DoubleClick(object sender, EventArgs e)
         {
             //delegate demo try

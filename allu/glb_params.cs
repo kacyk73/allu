@@ -95,7 +95,11 @@ namespace allu
             [(int)ArmyType.light_infantry] = 100,
             [(int)ArmyType.heavy_infantry] = 10,
             [(int)ArmyType.light_cavalry] = 10,
-            [(int)ArmyType.heavy_cavalry] = 10
+            [(int)ArmyType.heavy_cavalry] = 10,
+            [(int)ArmyType.light_artillery] = 10,
+            [(int)ArmyType.heavy_artillery] = 10,
+            [(int)ArmyType.logistic] = 10,
+            [(int)ArmyType.recruitment] = 10
         };
     }
 }

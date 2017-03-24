@@ -149,10 +149,28 @@ namespace allu
 
         public override void GenerateArmy()
         {
+            //infantry
             GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.light_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_infantry]);
             GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.light_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_infantry]);
             GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.heavy_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_infantry]);
             GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.heavy_infantry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_infantry]);
+            //cavalry
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.light_cavalry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_cavalry]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.light_cavalry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_cavalry]);
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.heavy_cavalry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_cavalry]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.heavy_cavalry, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_cavalry]);
+            //artillery
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.light_artillery, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_artillery]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.light_artillery, GlobalParameters.ArmyUnitsQty[(int)ArmyType.light_artillery]);
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.heavy_artillery, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_artillery]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.heavy_artillery, GlobalParameters.ArmyUnitsQty[(int)ArmyType.heavy_artillery]);
+            //logistic
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.logistic, GlobalParameters.ArmyUnitsQty[(int)ArmyType.logistic]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.logistic, GlobalParameters.ArmyUnitsQty[(int)ArmyType.logistic]);
+            //recruitement
+            GenerateArmySideType((int)FriendFoeKind.friend, (int)ArmyType.recruitment, GlobalParameters.ArmyUnitsQty[(int)ArmyType.recruitment]);
+            GenerateArmySideType((int)FriendFoeKind.foe, (int)ArmyType.recruitment, GlobalParameters.ArmyUnitsQty[(int)ArmyType.recruitment]);
+
         }
 
         private void GenerateArmySideType(int side, int army_type, int qty)
