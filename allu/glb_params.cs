@@ -8,6 +8,15 @@ using System.Windows.Forms;
 namespace allu
 {
 
+    //game status
+    public enum GameStatusList
+    {
+        peace = 1,
+        protecting = 2,
+        war = 3,
+        post_war = 4
+    }
+
     //army types
     public enum ArmyType
     {

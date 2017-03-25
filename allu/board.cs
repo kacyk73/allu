@@ -64,7 +64,7 @@ namespace allu
             btn_start2.SetBounds(1220, 550, 60, 30);
 
             //call local objects
-            this.Terra = new Terrain();
+            this.Terra = new Terrain((int)GameStatusList.peace);
 
             ArmyDel = new ArmyChangedHandler(OnDelCall);
             ArmyChanged += new EventHandler<ArmyChangedEventArgs>(OnDelCall);
@@ -209,6 +209,9 @@ namespace allu
                         //army label
                         lbl_army_type.Text = "";
                     }
+
+                    //game status
+                    lbl_game_state.Text = Convert.ToString(Terra.GameStatus);
                 }
                 else
                 {

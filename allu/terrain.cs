@@ -11,8 +11,17 @@ namespace allu
     /// the game map terrain
     /// </summary>
     public class Terrain : Map
-
     {
+        //default constructor
+        public Terrain()
+        {
+
+        }
+        public Terrain(int gamestatus) : this()
+        {
+            this.GameStatus = gamestatus;
+        }
+
         //storing global class locally
         public GlobalParameters glb_settings;
 

@@ -11,6 +11,8 @@ namespace allu
     /// </summary>
     public abstract class Map
     {
+
+
         //army dictionary
         public Dictionary<PosXY, Army> ArmyUnits = new Dictionary<PosXY, Army>();
 
@@ -50,6 +52,16 @@ namespace allu
             get { return friendFoe; }
             set { friendFoe = value; }
         }
+
+        //game status
+        private int gameStatus;
+
+        public int GameStatus
+        {
+            get { return gameStatus; }
+            set { gameStatus = value; }
+        }
+
 
         public abstract void Load_Map();
         public abstract void GeneratePopulation();
