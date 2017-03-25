@@ -98,6 +98,7 @@ namespace allu
         }
 
         public static readonly string[] ArmyTypeLabels = { "Light Infantry", "Heavy Infantry", "Light Cavalry", "Heavy Cavalry", "Light Artillery", "Heavy Artilery", "Logistics", "Recruitement" };
+        public static readonly string[] GameStatusLabels = { "Peace", "Preparing for war", "War", "Post-war" };
 
         public static readonly Dictionary<int, int> ArmyUnitsQty = new Dictionary<int, int>
         {

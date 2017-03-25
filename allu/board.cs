@@ -112,13 +112,24 @@ namespace allu
             //draw army
             Drawer.DrawArmy(Terra);
 
-            //memory check: temporary
-            lbl_memory.Text = Convert.ToString(GC.GetTotalMemory(forceFullCollection: true));
+            //next tour panel refresh
+            RefreshInfoPanel();
 
             //start button disable
             btn_start2.Visible = false;
 
 
+        }
+
+        private void RefreshInfoPanel()
+        {
+            //game status
+            var game_status = Convert.ToString(Terra.GameStatus);
+            string fun = GlobalParameters.GameStatusLabels[Convert.ToInt32(Terra.GameStatus) - 1];
+            lbl_game_state.Text = fun;
+
+            //memory check: temporary
+            lbl_memory.Text = Convert.ToString(GC.GetTotalMemory(forceFullCollection: true));
         }
 
         //protect against graphics redraw
@@ -210,8 +221,7 @@ namespace allu
                         lbl_army_type.Text = "";
                     }
 
-                    //game status
-                    lbl_game_state.Text = Convert.ToString(Terra.GameStatus);
+                    
                 }
                 else
                 {
