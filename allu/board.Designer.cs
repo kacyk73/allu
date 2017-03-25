@@ -36,6 +36,7 @@
             this.lbl_memory = new System.Windows.Forms.Label();
             this.lbl_population = new System.Windows.Forms.Label();
             this.lbl_army_type = new System.Windows.Forms.Label();
+            this.lbl_game_state = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_start2
@@ -79,9 +80,9 @@
             this.lbl_memory.AutoSize = true;
             this.lbl_memory.Location = new System.Drawing.Point(1276, 128);
             this.lbl_memory.Name = "lbl_memory";
-            this.lbl_memory.Size = new System.Drawing.Size(35, 13);
+            this.lbl_memory.Size = new System.Drawing.Size(75, 13);
             this.lbl_memory.TabIndex = 4;
-            this.lbl_memory.Text = "label2";
+            this.lbl_memory.Text = "memory_stack";
             // 
             // lbl_population
             // 
@@ -101,11 +102,21 @@
             this.lbl_army_type.TabIndex = 6;
             this.lbl_army_type.Text = "army_type";
             // 
+            // lbl_game_state
+            // 
+            this.lbl_game_state.AutoSize = true;
+            this.lbl_game_state.Location = new System.Drawing.Point(1276, 152);
+            this.lbl_game_state.Name = "lbl_game_state";
+            this.lbl_game_state.Size = new System.Drawing.Size(62, 13);
+            this.lbl_game_state.TabIndex = 7;
+            this.lbl_game_state.Text = "game_state";
+            // 
             // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 647);
+            this.Controls.Add(this.lbl_game_state);
             this.Controls.Add(this.lbl_army_type);
             this.Controls.Add(this.lbl_population);
             this.Controls.Add(this.lbl_memory);
@@ -137,5 +148,6 @@
         private System.Windows.Forms.Label lbl_memory;
         private System.Windows.Forms.Label lbl_population;
         private System.Windows.Forms.Label lbl_army_type;
+        private System.Windows.Forms.Label lbl_game_state;
     }
 }
