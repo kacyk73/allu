@@ -37,6 +37,7 @@
             this.lbl_population = new System.Windows.Forms.Label();
             this.lbl_army_type = new System.Windows.Forms.Label();
             this.lbl_game_state = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_start2
@@ -69,7 +70,7 @@
             // lblFriendFoe
             // 
             this.lblFriendFoe.AutoSize = true;
-            this.lblFriendFoe.Location = new System.Drawing.Point(1247, 24);
+            this.lblFriendFoe.Location = new System.Drawing.Point(1253, 52);
             this.lblFriendFoe.Name = "lblFriendFoe";
             this.lblFriendFoe.Size = new System.Drawing.Size(54, 13);
             this.lblFriendFoe.TabIndex = 3;
@@ -87,7 +88,7 @@
             // lbl_population
             // 
             this.lbl_population.AutoSize = true;
-            this.lbl_population.Location = new System.Drawing.Point(1247, 50);
+            this.lbl_population.Location = new System.Drawing.Point(1253, 78);
             this.lbl_population.Name = "lbl_population";
             this.lbl_population.Size = new System.Drawing.Size(56, 13);
             this.lbl_population.TabIndex = 5;
@@ -96,7 +97,7 @@
             // lbl_army_type
             // 
             this.lbl_army_type.AutoSize = true;
-            this.lbl_army_type.Location = new System.Drawing.Point(1247, 75);
+            this.lbl_army_type.Location = new System.Drawing.Point(1253, 103);
             this.lbl_army_type.Name = "lbl_army_type";
             this.lbl_army_type.Size = new System.Drawing.Size(55, 13);
             this.lbl_army_type.TabIndex = 6;
@@ -105,17 +106,28 @@
             // lbl_game_state
             // 
             this.lbl_game_state.AutoSize = true;
-            this.lbl_game_state.Location = new System.Drawing.Point(1276, 152);
+            this.lbl_game_state.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_game_state.Location = new System.Drawing.Point(1306, 9);
             this.lbl_game_state.Name = "lbl_game_state";
             this.lbl_game_state.Size = new System.Drawing.Size(62, 13);
             this.lbl_game_state.TabIndex = 7;
             this.lbl_game_state.Text = "game_state";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1275, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "State";
             // 
             // Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 647);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_game_state);
             this.Controls.Add(this.lbl_army_type);
             this.Controls.Add(this.lbl_population);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Label lbl_population;
         private System.Windows.Forms.Label lbl_army_type;
         private System.Windows.Forms.Label lbl_game_state;
+        private System.Windows.Forms.Label label1;
     }
 }
