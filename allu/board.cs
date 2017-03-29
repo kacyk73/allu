@@ -178,7 +178,7 @@ namespace allu
         {
             if (GameIsOn)
             {
-                //change call logic!!!
+                //change call logic!!
                 RefreshInfoPaneXY(e);
             }
 
