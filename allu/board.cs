@@ -180,6 +180,7 @@ namespace allu
             {
                 //change call logic!!
                 RefreshInfoPaneXY(e);
+
             }
 
         }
