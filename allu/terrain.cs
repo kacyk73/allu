@@ -155,6 +155,7 @@ namespace allu
             }
             MapTerrain = terr;
         }
+            
 
         public override void GenerateArmy()
         {
