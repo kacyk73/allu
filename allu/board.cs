@@ -75,7 +75,7 @@ namespace allu
         {
             throw new NotImplementedException();
         }
-
+            
         private void btn_start2_Click(object sender, EventArgs e)
         {
             //the game entry point
