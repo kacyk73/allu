@@ -16,7 +16,7 @@ namespace allu
         //army dictionary
         public Dictionary<PosXY, Army> ArmyUnits = new Dictionary<PosXY, Army>();
 
-        //army helper array for performance purposes 123b xfcdd d c ssffc
+        //army helper array for performance purposes 123b xfdd d c ssffc
 
         public bool[,] IsArmy
         {
